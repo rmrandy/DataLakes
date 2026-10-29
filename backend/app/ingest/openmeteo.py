@@ -27,7 +27,8 @@ async def ingest_weather() -> dict:
                 "longitude": place["longitude"],
                 "current_weather": True,
                 "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum",
-                "forecast_days": 3,
+                # 7-day forecast gives a usable temperature time series for charts
+                "forecast_days": 7,
                 "timezone": "auto",
             }
             resp = await client.get("https://api.open-meteo.com/v1/forecast", params=params)

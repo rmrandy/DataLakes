@@ -165,3 +165,61 @@ button.ghost {
   font-size: 0.8rem;
   margin-bottom: 0.5rem;
 }
+
+.report-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.report-panel .report-title {
+  margin: 0 0 0.35rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+}
+
+.comparison-wrap,
+.chart-wrap {
+  margin-top: 1.25rem;
+}
+
+.comparison-wrap h3,
+.chart-wrap h3 {
+  margin: 0 0 0.65rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.table-scroll {
+  overflow: auto;
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 0.5rem 0.65rem;
+  text-align: left;
+  white-space: nowrap;
+}
+
+th {
+  background: rgba(61, 207, 142, 0.08);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.chart-wrap {
+  background: rgba(10, 16, 14, 0.45);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 1rem;
+}
