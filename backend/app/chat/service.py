@@ -94,7 +94,7 @@ def _run_mongo(query: dict[str, Any]) -> list[dict[str, Any]]:
 
 def _plan_query(question: str) -> dict[str, Any]:
     _require_gemini()
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel(settings.gemini_model)
     prompt = f"""You are a MongoDB query planner for a small demo data lake.
 Answer ONLY by producing a JSON object — no prose.
 
@@ -135,7 +135,7 @@ User question: {question}
 
 def _answer_from_results(question: str, query: dict[str, Any], results: list[dict]) -> str:
     _require_gemini()
-    model = genai.GenerativeModel("gemini-2.0-flash")
+    model = genai.GenerativeModel(settings.gemini_model)
     prompt = f"""You answer questions ONLY using the MongoDB query results below.
 If results are empty or unrelated, say you don't have that in the ingested data.
 Do not invent facts. Be concise (2-6 sentences). Mention units when relevant.
